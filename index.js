@@ -16,7 +16,7 @@ var server = require('http');
 
 //Webhook
 
-app.post('webhook',function(req,res){
+app.post('/webhook',function(req,res){
     if(!req.body) return res.sendStatus(400)
     {
         res.setHeader('Contet-type', 'application/json');
