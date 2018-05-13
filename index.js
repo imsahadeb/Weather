@@ -19,7 +19,7 @@ var server = require('http');
 app.post('/webhook',function(req,res){
     if(!req.body) return res.sendStatus(400)
     {
-        res.setHeader('Contet-type', 'application/json');
+        res.setHeader('Content-type', 'application/json');
         var city = req.body.queryResult.parameters['geo-city'];
         var w = getWeather(city);
 
