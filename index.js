@@ -1,4 +1,4 @@
-import { Socket } from 'dgram';
+
 
 var request = require('request');
 var express = require('express');
@@ -11,8 +11,8 @@ app.use(
     })
   );
 var path =require('path');
-var server = require('http').createServer(app);
-var io = require('socket.io')(server);
+var server = require('http');
+//var io = require('socket.io')(server);
 
 //Webhook
 
@@ -66,3 +66,5 @@ app.post('webhook',function(req,res){
      return result;
 
  }
+
+ app.listen(80);
