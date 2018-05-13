@@ -21,7 +21,7 @@ app.post('/webhook',function(req,res){
     {
         res.setHeader('Contet-type', 'application/json');
         var city = req.body.queryResult.parameters['geo-city'];
-        var w = getWether(city);
+        var w = getWeather(city);
 
         let response="";
         let responseObj ={
@@ -56,7 +56,7 @@ app.post('/webhook',function(req,res){
  }
 
 
- function getWether(city){
+ function getWeather(city){
      result=undefined;
      var url ='http://api.openweathermap.org/data/2.5/weather?q=$(city)&appid=4e06f74e7d04fbe7e6a1ab369a2a5079';
      var req=request(url,cb);
